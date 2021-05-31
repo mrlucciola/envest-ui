@@ -22,7 +22,7 @@ import RSVPView from './rsvp/RSVPView';
 // constants
 const useStyles = makeStyles(theme => ({
   root: {
-    height: `100%`,
+    height: `100vh`,
     minHeight: `100%`,
     justifyContent: 'flex-start',
     alignItems: 'center',
