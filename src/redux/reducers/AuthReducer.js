@@ -11,7 +11,7 @@ const initialStateMain = {
     },
   },
   isAuthenticated: false,
-  isTestMode: true,
+  isTestMode: false,
 };
 const MainReducer = (state = _.cloneDeep(initialStateMain), action) => {
   const newState = _.cloneDeep(state);

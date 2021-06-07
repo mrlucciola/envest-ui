@@ -11,13 +11,16 @@ WORKDIR /frontend
 
 # install deps
 COPY package.json ./
-COPY yarn.lock ./
+#COPY yarn.lock ./
 RUN yarn install --frozen-lockfile
 # COPY package*.json ./
 # RUN npm ci
 
 # Bundle app source
 COPY ./public ./public
+
+# Copy env file
+COPY .env ./
 
 CMD if [ ${APP_ENV} = production ]; \
     then \

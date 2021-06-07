@@ -12,7 +12,7 @@ import App from './App';
 // style
 import './index.css';
 
-dotenv.config();
+dotenv.config('../.env');
 
 ReactDOM.render(
   <Provider store={store}>
