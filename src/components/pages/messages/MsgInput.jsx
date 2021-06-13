@@ -1,9 +1,11 @@
 // react
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // utils
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Paper, TextField, Button } from '@material-ui/core';
+import {createConversation} from '../../../redux/actions/ViewActions';
+import TextEditor from '../../elements/editor/editor';
 // constants
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,20 +46,30 @@ const useStyles = makeStyles(theme => ({
 const MsgInput = () => {
   // init hooks
   const classes = useStyles();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // state
-
+  const [messageText, setTextMessage] = useState('');
+  const onSend = () => {
+    console.log('button clicked');
+    dispatch(createConversation({
+      userId: 'user1',
+      messageText: messageText
+    }));
+  }
   return (
     <Paper square className={`MsgInput ${classes.root}`}>
-      <TextField
+      {/*<textarea
         className={classes.input}
         multiline
         variant="outlined"
         placeholder="Write message here"
         size="small"
         margin="dense"
-      />
-      <Button variant="contained" className={classes.button}>
+      />*/}
+      <TextEditor onChange={(text) => {
+        setTextMessage(text);
+      }}/>
+      <Button variant="contained" className={classes.button} onClick={onSend}>
         Send
       </Button>
     </Paper>

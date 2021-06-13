@@ -28,6 +28,15 @@ const theme = createMuiTheme({
       active: {},
       completed: {},
     },
+    MuiTab: {
+      root: {
+        minWidth: 100
+      },
+      wrapper: {
+        fontWeight: 600,
+        textTransform: 'none'
+      }
+    }
   },
   palette: {
     primary: {

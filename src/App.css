@@ -12,7 +12,7 @@ body {
 * {
   position: relative;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
+  /*font-weight: 300;*/
   box-sizing: border-box;
   /* outline-width: 0.5px;
   outline-color: rgb(201, 216, 201);

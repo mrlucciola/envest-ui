@@ -97,11 +97,25 @@ const MessagesReducer = (state = _.cloneDeep(initMessagesState), action) => {
   }
 };
 
+const TestReducer = (state = [], action) => {
+    switch (action.type) {
+      case 'test': {
+        console.log(action)
+        state.push(action.payload);
+        return state;
+      }
+      default: {
+        return state;
+      }
+    }
+}
+
 const ViewReducer = combineReducers({
   main: MainReducer,
   profile: ProfileReducer,
   messages: MessagesReducer,
   feed: FeedReducer,
+  test: TestReducer
 });
 
 export default ViewReducer;
